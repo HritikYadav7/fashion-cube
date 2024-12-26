@@ -11,7 +11,7 @@ const mongoConfig = require('./configs/mongo-config')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect(mongoConfig, console.log("Connected to mongoDB")).catch("MongoDB connection failed");
+mongoose.connect(mongoConfig, console.log(`Connected to mongoDB`)).catch(`MongoDB connection failed`);
 
 var app = express()
 app.use(cors())
