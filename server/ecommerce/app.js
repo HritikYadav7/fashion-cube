@@ -11,10 +11,7 @@ const mongoConfig = require('./configs/mongo-config')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect(mongoConfig, { useNewUrlParser: true, useCreateIndex: true, },function(error){
-  if(error) throw error
-    console.log(`connect mongodb success`);
-});
+mongoose.connect(mongoConfig, console.log("Connected to mongoDB")).catch("MongoDB connection failed");
 
 var app = express()
 app.use(cors())
